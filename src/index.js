@@ -3,14 +3,16 @@ import RickAndMortyService from './service';
 
 // acá deberás crear una instancia del servicio RickAndMortyService
 // const service = new RickAndMortyService();
+const service = new RickAndMortyService("https://rickandmortyapi.com/api/character");
 
 // esta función debe encargarse de obtener el elemento contenedor
 // y agregar los personajes obtenidos por el API, deberás llamar tu función getAllCharacters
 // iterar el arreglo de personajes y llamar a la función createCharacterCard para agregar cada personaje
 // a el contenedor puedes usar la propiedad innerHTML para esto
 
-
 function createCharacterList() {
+    
+    var characters = service.getAllCharacters()
     // llamar primero createCharacterCard(character);
     // llamar segundo addCharacterListeners(character);
 }

@@ -42,7 +42,9 @@
 class RickAndMortyService {
     // el constructor debe inicializar una variable con la url de acceso base al API
 
-	constructor() {}
+	constructor(url) {
+        this.url = url;
+    }
 
     
     // este método deberá llamar al servicio y obtener los personajes
@@ -77,7 +79,27 @@ class RickAndMortyService {
 
 	getAllCharacters() {
         // aqui va tu llamado al API usando fetch puedes usar promesas o asycn/await
-	}
+        fetch(this.url)
+        .then((characters) => characters.json())
+        .then((character) => { 
+            // Crear un código que itere todos los personajes de la respuesta
+            // y devuelva un objeto con los datos requeridos dentro de un array
+            const characters = character.results;
+            const characterData = characters.map((char) => {
+                return {
+                    name: char.name,
+                    status: char.status,
+                    species: char.species,
+                    firstSeen: char.origin.name,
+                    location: char.location.name,
+                    image: char.image,
+                    student: "Jose Luis Tovar",
+                    code: "234059",
+                };
+            });
+        return characterData;
+	    })
+    }
 }
 
 export default RickAndMortyService;
