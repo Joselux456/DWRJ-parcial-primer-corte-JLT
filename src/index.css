@@ -9,3 +9,47 @@
 .character-list {
     background-color: var(--background-color);
 }
+.card {
+    position: absolute;
+    width: 294px;
+    height: 400px;
+    left: 348px;
+    top: 1281px;
+    color: darkgray;
+}    
+name.container {
+    position: absolute;
+    width: 199px;
+    height: 16px;
+    left: 365px;
+    top: 1094px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+}
+status.container {
+    position: absolute;
+width: 34px;
+height: 16px;
+left: 695px;
+top: 1545px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+display: flex;
+align-items: center;
+
+color: #FFFFFF;
+}
+
+
+

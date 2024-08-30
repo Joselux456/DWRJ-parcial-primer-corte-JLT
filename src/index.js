@@ -11,8 +11,14 @@ const service = new RickAndMortyService("https://rickandmortyapi.com/api/charact
 // a el contenedor puedes usar la propiedad innerHTML para esto
 
 function createCharacterList() {
-    
+
     var characters = service.getAllCharacters()
+    for(obj in characters) {
+        var card = createCharacterCard(characters[obj]);
+        document.getElementById("container").innerHTML = card
+        addCharacterListeners(characters[obj]);
+
+    }
     // llamar primero createCharacterCard(character);
     // llamar segundo addCharacterListeners(character);
 }
@@ -27,7 +33,25 @@ function createCharacterList() {
 // deberás usar los elementos correctos de HTML para poder visualizar el personaje
 
 
-function createCharacterCard(character) {}
+function createCharacterCard(character) {
+    return `<div>
+        <CharacterCard>
+            <img src="${character.image}">
+            <name>
+                ${character.name}
+            </name>
+            <status>
+                ${character.status}
+            </status>
+            <species>
+                ${character.species}
+            </species>
+            <firstSeen>
+                ${character.firstSeen}
+            </firstSeen>
+        </CharacterCard>
+    </div>`;
+}
 
 // esta función deberá obtener todos los personajes y deberá agregarles un evento de click en el icono de corazon
 // cuando se haga click al icono de corazon aparecer una alerta con un mensaje 
